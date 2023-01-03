@@ -1,13 +1,8 @@
-# import sympy
-from sympy import *
+from sympy import Function, Derivative
+from sympy.abc import x # x is the independent variable
+f = Function("f")(x) # f is a function of x
+# f_ will be the derivative of f with respect to x
+f_ = Derivative(f, x)
 
-x, y = symbols('x y')
-expr = input("Enter the equation to be differentiated:    ")
-print("Expression : {} ".format(expr))
-
-# Use sympy.Derivative() method
-expr_diff = Derivative(expr, x)
-	
-print("Derivative of expression with respect to x : {}".format(expr_diff))
-print("Value of the derivative : {} ".format(expr_diff.doit()))
+print("Value of the derivative : {} ".format(f_.doit()))
 
